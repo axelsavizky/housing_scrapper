@@ -3,6 +3,7 @@ import logging
 import random
 from lib.sslless_session import SSLlessSession
 import yaml
+import time
 
 class NullNotifier:
     def notify(self, properties):
@@ -23,11 +24,12 @@ class Notifier(NullNotifier):
         text = random.choice(self.config['messages'])
         self.bot.send_message(chat_id=self.config['chat_id'], text=text)
 
-        for prop in properties:
-            logging.info(f"Notifying about {prop['url']}")
+        for i, prop in enumerate(properties):
+            logging.info(f"{i} - Notifying about {prop['url']}")
             self.bot.send_message(chat_id=self.config['chat_id'], 
                     text=f"[{prop['title']}]({prop['url']})",
                     parse_mode=telegram.ParseMode.MARKDOWN)
+            time.sleep(3.5)
 
     def test(self, message):
         self.bot.send_message(chat_id=self.config['chat_id'], text=message)

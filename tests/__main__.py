@@ -22,9 +22,9 @@ if __name__ == "__main__":
     provider = Mercadolibre('mercadolibre', cfg['providers']['mercadolibre'])
     [print(prop) for prop in provider.next_prop()]
 
-    provider = Properati('properati', cfg['providers']['properati'])
-    [print(prop) for prop in provider.next_prop()]
+    #provider = Properati('properati', cfg['providers']['properati'])
+    #[print(prop) for prop in provider.next_prop()]
 
-    provider = Inmobusqueda('inmobusqueda', cfg['providers']['inmobusqueda'])
-    [print(prop) for prop in provider.next_prop()]
+    #provider = Inmobusqueda('inmobusqueda', cfg['providers']['inmobusqueda'])
+    #[print(prop) for prop in provider.next_prop()]
 

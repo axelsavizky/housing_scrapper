@@ -44,5 +44,5 @@ class Mercadolibre(BaseProvider):
                     }
 
             from_ += 50
-            page_link = self.provider_data['base_url'] + source + f"_Desde_{from_}_NoIndex_True"
+            page_link = self.provider_data['base_url'] + source.replace("_PriceRange", f"_Desde_{from_}_PriceRange") + "_NoIndex_True"
     
